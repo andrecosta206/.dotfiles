@@ -13,7 +13,7 @@
 >## Install Tmux
 >
 >```
->``git clone https://github.com/tmux/tmux.git
+>git clone https://github.com/tmux/tmux.git
 >cd tmux
 >sh autogen.sh
 >./configure
@@ -24,7 +24,8 @@
 >
 >```
 >git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
->~/.fzf/install ```
+>~/.fzf/install
+>```
 
 >## Install stow and create symlinks
 >
