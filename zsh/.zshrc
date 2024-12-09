@@ -27,7 +27,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 autoload -U compinit && compinit
 
 
-alias ls="ls --color"
+alias ls="eza --long --color=always --icons=always --no-user"
 
 # Shell integration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -42,7 +42,7 @@ alias gc='git commit -m'
 alias glog='git log --oneline --graph --all'
 
 # TMUX  and scripts
-PATH="$PATH":"$HOME/.local/scripts/"
+PATH="$PATH":"$HOME/.local/scripts/:$HOME/.local/bin"
 bindkey -r '^f'
 bindkey -s '^f' "tmux-sessionizer"
 
@@ -50,5 +50,9 @@ bindkey -s '^f' "tmux-sessionizer"
 
 # Starship
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+
+
+
 # set Starship PATH
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
