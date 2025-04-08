@@ -52,7 +52,5 @@ bindkey -s '^f' "tmux-sessionizer"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-
-
 # set Starship PATH
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
