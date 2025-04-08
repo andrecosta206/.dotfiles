@@ -1,0 +1,20 @@
+# git aliases
+alias gt="git"
+alias ga="git add ."
+alias gs="git status -s"
+alias gc='git commit -m'
+alias glog='git log --oneline --graph --all'
+
+# ide aliases
+alias idea="/opt/idea-IU-243.26053.27/bin/idea . > /dev/null 2>&1 &"
+alias ws="/opt/WebStorm-243.26053.12/bin/webstorm . > /dev/null 2>&1 &>"
+
+#fzf
+alias f="fzf"
+#Opens documentation through fzf
+alias fman="compgen -c | fzf | xargs man"
+
+#Better ls
+alias ls="eza --no-filesize --long --color=always --icons=always --no-user"
+alias lg="eza --grid --color=always --icons=always"
+alias lt="eza --all --tree --git-ignore --icons=always"
