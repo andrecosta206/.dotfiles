@@ -10,6 +10,6 @@ export NVM_DIR="$HOME/.nvm"
 export JAVA_HOME=/usr/lib/jvm/zulu17.56.15-ca-jdk17.0.14-linux_x64
 export PATH=$JAVA_HOME/bin:$PATH
 
-export M2_HOME=/opt/apache-maven-3.x.y
-export MAVEN_HOME=/opt/apache-maven-3.x.y
+export M2_HOME=/opt/apache-maven-3.9.9
+export MAVEN_HOME=/opt/apache-maven-3.9.9
 export PATH="$M2_HOME/bin:$PATH"
