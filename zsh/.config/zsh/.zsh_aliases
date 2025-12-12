@@ -16,5 +16,6 @@ alias fman="compgen -c | fzf | xargs man"
 
 #Better ls
 alias ls="eza --no-filesize --long --color=always --icons=always --no-user"
+alias la="eza -a --no-filesize --long --color=always --icons=always --no-user"
 alias lg="eza --grid --color=always --icons=always"
 alias lt="eza --all --tree --git-ignore --icons=always"
