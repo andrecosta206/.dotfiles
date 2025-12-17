@@ -1,6 +1,3 @@
-export PATH="$HOME/.local/scripts:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-
 # +---------+
 # | Plugins |
 # +---------+
@@ -13,8 +10,6 @@ source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Vim Motions
 bindkey -v
 export KEYTIMEOUT=1
-
-# source /usr/share/fzf/key-bindings.zsh
 
 # Rebind ALT-c to CTRL-e
 bindkey -rM emacs '\ec'
@@ -45,6 +40,7 @@ bindkey -s '^f' "tmux-sessionizer \n"
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' matcher-list "${(s.:.)LS_COLOR}"
 zstyle ':completion:*' menu no
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 #Load completions
@@ -55,9 +51,8 @@ source <(fzf --zsh)
 
 #Initialiase fzf, starship
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(starship init zsh)"
 
-fastfetch
+# fastfetch
 
 # +---------+
 # | HISTORY |
@@ -79,6 +74,23 @@ setopt HIST_VERIFY               # Do not execute immediately upon history expan
 if [ -f $ZDOTDIR/.zsh_aliases ]; then
     source $ZDOTDIR/.zsh_aliases
 fi
+
+# +-----+
+# | NVM |
+# +-----+
+
+# 0.2s faster loadTime
+nvm() {
+  unset -f nvm
+  source /usr/share/nvm/init-nvm.sh
+  nvm "$@"
+}
+
+# +----------+
+# | STARSHIP |
+# +----------+
+
+eval "$(starship init zsh)"
 
 # Needs to be sourced after zle -N/ compinit
 source $ZDOTDIR/plugins/catppuccin_mocha-zsh-syntax-highlighting.zsh

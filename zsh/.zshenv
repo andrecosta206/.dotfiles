@@ -31,24 +31,30 @@ export SAVEHIST=10000                   # Maximum events in history file
 # export I3_CONFIG="$XDG_CONFIG_HOME/i3"
 # export VIMCONFIG="$XDG_CONFIG_HOME/nvim"
 # export GIMP_VERSION="2.10"
+export STARTSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
+export STARSHIP_CACHE="$XDG_CACHE_HOME/starship"
 export SCREENSHOT="$HOME/Documents/images/screenshots"
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-FZF_COLORS="bg+:-1,\
-fg:gray,\
-fg+:white,\
-border:black,\
-spinner:0,\
-hl:yellow,\
-header:blue,\
-info:green,\
-pointer:red,\
-marker:blue,\
-prompt:gray,\
-hl+:red"
+FZF_COLORS="\
+bg:#1E1E2E,\
+bg+:#313244,\
+fg:#CDD6F4,\
+fg+:#CDD6F4,\
+border:#6C7086,\
+spinner:#F5E0DC,\
+hl:#F38BA8,\
+hl+:#F38BA8,\
+header:#F38BA8,\
+info:#CBA6F7,\
+pointer:#F5E0DC,\
+marker:#B4BEFE,\
+prompt:#CBA6F7,\
+label:#CDD6F4,\
+selected-bg:#45475A"
 
 export FZF_DEFAULT_OPTS="--height 60% \
 --border sharp \
@@ -75,3 +81,11 @@ export NPM_BIN="$XDG_CONFIG_HOME/node_modules/bin"
 
 # git
 export GIT_REVIEW_BASE=master # See gitconfig
+
+# nvm
+export NVM_DIR="$XDG_CONFIG_HOME/.nvm"
+export NVM_DEFAULT="v20.11.1"
+export PATH="$HOME/.nvm/versions/node/$NVM_DEFAULT/bin:$PATH"
+
+export PATH="$HOME/.local/scripts:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
