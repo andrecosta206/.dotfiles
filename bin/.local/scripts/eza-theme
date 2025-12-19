@@ -1,0 +1,25 @@
+#! /bin/sh
+
+EZA_PATH="$XDG_CONFIG_HOME/eza"
+
+usage() {
+  echo "Usage: $(basename "$0") <theme> <color>"
+  echo "Set the eza theme by creating a symlink to the selected theme file."
+  echo
+  echo "Available themes:"
+  echo "$(ls -1 "$EZA_PATH/themes")"
+  echo
+  echo "Available colors:"
+  echo "$(ls -1 $EZA_PATH/themes/mocha 2>/dev/null | sed -E 's/^catppuccin-[^-]+-([^.]+)\.yml$/\1/')"
+  echo
+  echo "Example:"
+  echo "  $(basename "$0") mocha peach"
+}
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ -z "$1" ]; then
+  usage
+  exit 0
+fi
+
+ln -sf "$EZA_PATH/themes/$1/catppuccin-$1-$2.yml" "$EZA_PATH/theme.yml"
+echo "eza theme set to $1-$2"
